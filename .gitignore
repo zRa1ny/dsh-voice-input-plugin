@@ -1,0 +1,10 @@
+# Dependencies are installed by the consuming dsh profile, never committed here.
+node_modules/
+
+# Packed artifacts (npm pack / pnpm pack).
+*.tgz
+
+# Editor and OS noise.
+.DS_Store
+.idea/
+.vscode/

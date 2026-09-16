@@ -1,0 +1,54 @@
+{
+  "name": "dsh-voice-input-plugin",
+  "version": "0.1.0",
+  "description": "dsh Web 语音输入插件：在输入框发送按钮一侧加一个麦克风按钮，点击开始录音并实时转写进待发送框，再点停止",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "cordis.patch.yml",
+    "market",
+    "README.md"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "dsh-bundle",
+    "dsh-client",
+    "voice",
+    "speech-to-text",
+    "dictation",
+    "web-speech-api"
+  ],
+  "author": "zRa1ny",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zRa1ny/dsh-voice-input-plugin.git"
+  },
+  "homepage": "https://github.com/zRa1ny/dsh-voice-input-plugin#readme",
+  "bugs": {
+    "url": "https://github.com/zRa1ny/dsh-voice-input-plugin/issues"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": false,
+      "inject": [
+        "slots"
+      ]
+    },
+    "engines": {
+      "dsh": ">=0.1.0-rc.5"
+    }
+  }
+}

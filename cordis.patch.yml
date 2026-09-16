@@ -1,0 +1,11 @@
+# dsh-voice-input-plugin's contribution layer.
+#
+# One row, referenced by package name (not a source path): Node module
+# resolution finds the installed code from the profile directory, which declares
+# this package as a dependency. The row's node half is empty — it exists so the
+# web client's module registry has a Loader entry to read this package's
+# `dsh.client` declaration from, which is how /plugins/dsh-voice-input-plugin/client.js
+# reaches the browser.
+- insert:
+    - id: voice-input
+      name: dsh-voice-input-plugin
