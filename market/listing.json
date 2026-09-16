@@ -6,7 +6,6 @@
   "description": "在 dsh Web 输入框的发送按钮一侧加一个麦克风按钮：点击开始录音，识别结果实时逐字写入待发送框，再点一次停止。基于浏览器 Web Speech API，纯客户端实现，不占用 Host、不注册模型工具。",
   "descriptionEn": "Adds a mic button beside the send button in the dsh Web composer: click to start recording and watch the transcript appear in the draft live, click again to stop. Pure client-side, built on the browser Web Speech API.",
   "repo": "https://github.com/zRa1ny/dsh-voice-input-plugin",
-  "npm": "dsh-voice-input-plugin",
   "category": "ui",
   "subcategory": "chat"
 }
