@@ -73,12 +73,12 @@ pnpm dsh plugin --profile web add ../dsh-voice-input-plugin
 
 ## 使用
 
-1. 点麦克风按钮 → 按钮变红并出现脉冲光圈，浏览器首次会弹麦克风授权。
+1. 点麦克风按钮 → 按钮变为青蓝色渐变并扩散双层脉冲光圈，浏览器首次会弹麦克风授权。
 2. 说话时文字实时出现在待发送框（含未定稿的中间结果），可以继续用键盘编辑。
 3. 再点一次按钮 → 结束录音，已识别的文字留在输入框。
 4. 点原来的发送按钮发送。
 
-状态与失败提示都在按钮上：录音中为红色停止方块，出错时图标转红、鼠标悬停（`title`）显示具体原因，再点一次即可重试。
+状态与失败提示都在按钮上：录音中为青蓝色停止方块，带呼吸辉光与双层波纹；出错时图标转红、鼠标悬停（`title`）显示具体原因，再点一次即可重试。
 
 ## 行为契约
 
@@ -91,7 +91,7 @@ pnpm dsh plugin --profile web add ../dsh-voice-input-plugin
 | 去重 | 以结果下标记录已定稿的片段，事件重复投递不会重复追加文字 |
 | 静音 / 主动停止 | `no-speech` 与 `aborted` 视为正常，不进入错误态 |
 | 卸载 | 切换会话或插件卸载时中止识别并释放麦克风（`abort()`），随插件 fiber 一起撤销 |
-| 样式 | 自注入一个 `<style data-plugin="dsh-voice-input-plugin" data-plugin-css="…">` 标签，使用主题 CSS 变量；卸载时由模块登记表按 `data-plugin` 归属清除 |
+| 样式 | 自注入一个 `<style data-plugin="dsh-voice-input-plugin" data-plugin-css="…">` 标签，基础态沿用主题 CSS 变量，录音态使用插件私有青蓝变量（`--dshv-voice-accent` 等）；尊重 `prefers-reduced-motion`；卸载时由模块登记表按 `data-plugin` 归属清除 |
 
 ## 实现原理
 
